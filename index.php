@@ -40,7 +40,7 @@ class Bank {
 	public static $populate = [
 		'login' => [
 			'class' => 'Login',
-			'option' => 'bank/login option'
+			'option' => 'bank/login option',
 			'other_data' => ''
 		]
 	];
@@ -65,6 +65,10 @@ if (isset($_GET['r'])){
 }
 
 function test($class, $key){
+	if (!isset($class::$populate[$key])){
+		echo "Impossible action";
+		return;
+	}
 	$a = $class::$populate[$key];
 	echo $a['class']."<br/>";
 	print_r( $a['class']::$fields ); // this is main point
@@ -75,3 +79,5 @@ function test($class, $key){
 <a href="?r=login&populate=bank">Login, Bank</a><br/>
 <a href="?r=login&populate=user">Login, User</a><br/>
 <a href="?r=bank&populate=login">Bank, Login</a><br/>
+<br/>
+<a href="?r=bank&populate=user">Bank, User - Impossible action</a><br/>

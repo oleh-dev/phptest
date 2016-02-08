@@ -1,0 +1,1 @@
+- I would like to save opportunity to have different populate['login'] in different classes, sure currency we can see some duplicates, but this way more flexible, for example, table `bank` can has field related with `login` called `MainUser`
