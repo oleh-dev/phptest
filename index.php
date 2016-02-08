@@ -5,10 +5,12 @@ class Login {
 	public static $populate = [
 		'user' => [
 			'class' => 'User',
+			'option' => 'login/user option',
 			'other_data' => ''
 		], 
 		'bank' => [
 			'class' => 'Bank',
+			'option' => 'login/bank option',
 			'other_data' => ''
 		]
 	];
@@ -23,6 +25,7 @@ class User {
 	public static $populate = [
 		'login' => [
 			'class' => 'Login',
+			'option' => 'user/login option',
 			'other_data' => ''
 		]
 	];
@@ -37,6 +40,7 @@ class Bank {
 	public static $populate = [
 		'login' => [
 			'class' => 'Login',
+			'option' => 'bank/login option'
 			'other_data' => ''
 		]
 	];
